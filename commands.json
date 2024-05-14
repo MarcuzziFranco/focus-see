@@ -1,0 +1,12 @@
+{
+    "commands": [
+        {
+            "name": "greet",
+            "function": "greet_function"
+        },
+        {
+            "name": "farewell",
+            "function": "farewell_function"
+        }
+    ]
+}
