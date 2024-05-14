@@ -4,6 +4,5 @@ class Command:
         self.execute = execute
     
     def run(self):
-        print(f"Running command:{self.code}")
         self.execute();
         

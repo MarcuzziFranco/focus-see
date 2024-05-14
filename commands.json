@@ -1,12 +1,12 @@
 {
     "commands": [
         {
-            "name": "greet",
-            "function": "greet_function"
+            "name": "start camera",
+            "function" : "start_camera"
         },
         {
-            "name": "farewell",
-            "function": "farewell_function"
+            "name": "stop camera",
+            "function" : "stop_camera"
         }
     ]
 }

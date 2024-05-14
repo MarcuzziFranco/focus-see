@@ -1,26 +1,31 @@
 import json
 from command import Command
+from camera_service import CameraService
 
 commands = []
 commands_map = {}
 
+camera_service = CameraService()
 
 
-# Definir las funciones que se usarán en los comandos
-def greet_function():
-    print("Hello! How are you?")
+def initialice_camera_thread():
+    print("Initialice thread camera...")
+    camera_service.create_thread()
 
-def farewell_function():
-    print("Goodbye! See you soon!")
+def command_start_camera():
+    camera_service.capture_start()
+
+def command_stop_camera():
+    camera_service.capture_stop()
 
 functions = {
-    "greet_function": greet_function,
-    "farewell_function": farewell_function
+    "start_camera": command_start_camera,
+    "stop_camera": command_stop_camera
 }
 
-# Mapeo de nombres de funciones a objetos de función
+# Cargar archivo de comandos y asignar funciones a comandos
 def load_command_file():
-    with open('commands.json','r') as file:
+    with open('commands.json', 'r') as file:
         data = json.load(file)
 
     for command_data in data["commands"]:
@@ -38,12 +43,29 @@ def execute_command(command_name):
     else:
         print(f"Command '{command_name}' not found")
 
+def main():
+    print("Init focus-see!")
+
+    load_command_file()
+
+    initialice_camera_thread()  # Inicializa el hilo de la cámara desde el principio
+
+    try:
+        while True:
+            user_input = input("Enter a command: ")
+            if user_input.lower() == "exit":
+                break
+            execute_command(user_input)
+    except KeyboardInterrupt:
+        pass
+    finally:
+        camera_service.stop()
+
+def finish_program():
+    print("finished program")
 
 if __name__ == "__main__":
-    print("Init focus-see!")
-    load_command_file()
-    while True:
-        user_input = input("Enter a command: ")
-        if user_input.lower() == "exit":
-            break
-        execute_command(user_input)
+   main()
+   finish_program()
+
+
