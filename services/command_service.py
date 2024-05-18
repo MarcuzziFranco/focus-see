@@ -97,4 +97,4 @@ class CommandService(threading.Thread):
         if code in self.functionsCommands:
             self.functionsCommands[code]()
         else:
-            print(f"Command '{code}' not found")
+            print(f"Command '{code}' not found, use the 'help' command to see command menu")
