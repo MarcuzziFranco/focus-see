@@ -1,12 +1,29 @@
 {
     "commands": [
         {
-            "name": "start camera",
-            "function" : "start_camera"
+            "code": "on camera",
+            "description": "Init thread camera"
         },
         {
-            "name": "stop camera",
-            "function" : "stop_camera"
+            "code": "off camera",
+            "description": "Close thread camera"
+        },
+        {
+            "code": "cls",
+            "description": "Clear console"
+        },
+        {
+            "code": "reset",
+            "description": "Reset the program"
+        },
+        {
+            "code": "exit",
+            "description": "Close the program"
+        },
+        {
+            "code": "help",
+            "description": "Open help menu"
         }
+        
     ]
 }
