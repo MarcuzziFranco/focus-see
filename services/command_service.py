@@ -2,7 +2,6 @@ from services.camera_service import CameraServiceThread
 from model.command import Command
 import threading
 import json
-import sys
 import time
 import os
 
@@ -21,7 +20,6 @@ class CommandService(threading.Thread):
         self.bind_diccionary_commands()
 
         self.load_command_file()
-
 
     def bind_diccionary_commands(self):
         self.functionsCommands = {
@@ -75,7 +73,7 @@ class CommandService(threading.Thread):
         time.sleep(1)  # Delay of 2 seconds
         os._exit(0)  # Forceful exit
 
-    def get_status_thread_command(self):
+    def get_status_thread_command(self): #deprecate
         return self.run_thread_command
     
     def load_command_file(self):
