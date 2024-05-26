@@ -1,0 +1,17 @@
+
+PATH_MODEL = 'C:/Users/Franco/projects/focus-see/NeuralNetModel/face_landmarker.task' #Get path absolute
+MID_FOREHEAD = 10
+EYE_LEFT_INDEX = 468
+EYE_RIGHT_INDEX = 473
+NOSE_INDEX = 4
+JAW = 152
+
+COLOR = (0, 255, 0)  # Green
+THICKNESS = 2
+
+MONITOR_CODE_UP = 1
+MONITOR_CODE_LEFT = 2
+MONITOR_CODE_CENTER = 3
+MONITOR_CODE_RIGHT = 4
+KEYBOARD = 5
+
