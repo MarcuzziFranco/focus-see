@@ -21,6 +21,9 @@ class CommandService(threading.Thread):
 
         self.load_command_file()
 
+        #Execute command manual clear display.
+        self.execute_command("cls")
+        
     def bind_diccionary_commands(self):
         self.functionsCommands = {
             "on camera": self.start_camera,
