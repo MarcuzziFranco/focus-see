@@ -25,11 +25,11 @@ class MonitorControl:
             current_monitor = constants.KEYBOARD
             self.update_position_mouse_in_monitor(current_monitor)
             text="KEYBOARD"
-        elif x > 10:
+        elif x > 8:
             current_monitor = constants.MONITOR_CODE_UP
             self.update_position_mouse_in_monitor(current_monitor)
             text="UP"
-        elif x>-5 and x < 5:
+        elif x>-8 and x < 5:
             current_monitor = constants.MONITOR_CODE_CENTER
             text="CENTER"
             self.update_position_mouse_in_monitor(current_monitor)
@@ -60,7 +60,7 @@ class MonitorControl:
                 center_x =  1920 + (1920 // 2)
                 center_y = (1080 // 2)
             else:
-                print("Monitor number not valid")
+                #print("Monitor number not valid")
                 return
             
             #Change position mouse to center monitor.
